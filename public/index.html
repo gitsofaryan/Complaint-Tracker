@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipal Complaint Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <h1>Municipal Complaint Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#benefits">Benefits</a></li>
+                <li><a href="#form">Submit a Complaint</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About Complaint Tracker</h2>
+            <p>The Municipal Complaint Tracker is an innovative platform designed to bridge the gap between the public and local government authorities. It allows citizens to report various issues such as road conditions, garbage collection, and water supply problems directly to their municipal corporation with ease.</p>
+        </section>
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Interactive Map: View recent complaints and their statuses.</li>
+                <li>Complaint Submission: Easy form to report issues with photo uploads and location tagging.</li>
+                <li>Real-time Updates: Track the status of your complaint in real-time.</li>
+            </ul>
+        </section>
+        <section id="benefits">
+            <h2>Benefits</h2>
+            <h3>For Citizens</h3>
+            <p>With the Complaint Tracker, citizens can easily report issues and track their resolution, ensuring a cleaner and safer environment. It empowers residents to have a voice in the maintenance and improvement of their community.</p>
+            <h3>For the Government</h3>
+            <p>The platform enables municipal authorities to efficiently manage and address public complaints, improving service delivery and transparency. It helps prioritize issues based on severity and frequency, ensuring resources are used effectively.</p>
+        </section>
+        <section id="form">
+            <h2>Submit a Complaint</h2>
+            <form id="complaintForm" action="/submit-complaint" method="post" enctype="multipart/form-data">
+                <label for="category">Category:</label>
+                <select id="category" name="category">
+                    <option value="roads">Roads</option>
+                    <option value="garbage">Garbage</option>
+                    <option value="waterSupply">Water Supply</option>
+                </select>
+
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4" required></textarea>
+
+                <label for="photo">Photo:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" placeholder="Enter location" required>
+
+                <button type="button" id="findLocation">Find Location</button>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section id="mapView">
+            <h2>Complaint Area</h2>
+            <div id="map"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Municipal Complaint Tracker (●'◡'●) Made by <a href="https://github.com/gitsofaryan" style="text-decoration: none;">Aryan Jain</a> </p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
